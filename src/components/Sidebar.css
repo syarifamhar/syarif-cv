@@ -5,7 +5,8 @@
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 1000;
+    z-index: 9999;
+    color: #fff;
   }
   
   .sidebar {
@@ -16,7 +17,7 @@
     height: 100%;
     background-color: #dec3a3;
     color: white;
-    transition: left 0.3s ease-in-out; /* Smooth sliding effect */
+    transition: left 0.5s ease-in-out; /* Smooth sliding effect */
     padding-top: 60px;
     z-index: 999;
   }
