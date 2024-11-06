@@ -2,7 +2,7 @@
 import React from 'react';
 import Sidebar from './components/Sidebar';
 import HeroSection from './components/HeroSection';
-import './App.css'; // Global path from 'src'
+import './App.css';
 
 
 function App() {

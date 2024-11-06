@@ -1,31 +1,33 @@
-// Sidebar.js
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import './App.css';
+import './Sidebar.css';
 
-const Sidebar = () => {
+function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
+  const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-      <button className="menu-toggle" onClick={toggleMenu}>
-        <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
-      </button>
-      <ul className="menu-list">
-        <li>Home</li>
-        <li>About Me</li>
-        <li>Experience</li>
-        <li>Portfolio</li>
-        <li>Skills</li>
-        <li>Contact Me</li>
-      </ul>
+    <div>
+      {/* Burger Menu Icon */}
+      <div className="burger-menu" onClick={toggleSidebar}>
+        &#9776; {/* This is the burger icon (≡) */}
+      </div>
+
+      {/* Sidebar */}
+      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <ul>
+          <li>Home</li>
+          <li>About Me</li>
+          <li>Experience</li>
+          <li>Portfolio</li>
+          <li>Skills</li>
+          <li>Contact Me</li>
+        </ul>
+      </div>
     </div>
   );
-};
+}
 
 export default Sidebar;
