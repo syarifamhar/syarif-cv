@@ -1,0 +1,46 @@
+.about-section {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    padding: 100px;
+    color: #fff;
+  }
+  
+  .about-heading h1 {
+    font-size: 68px;
+    color: #f0deca;
+    margin-bottom: 20px;
+  }
+  
+  .about-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .about-content p {
+    font-size: 18px;
+    line-height: 2.1;
+    margin-bottom: 40px;
+  }
+  
+  .about-icons {
+    display: flex;
+    gap: 30px;
+    justify-content: space-around;
+  }
+  
+  .icon-item {
+    text-align: center;
+  }
+  
+  .icon-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .icon-item p {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  

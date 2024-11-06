@@ -3,6 +3,7 @@ import React from 'react';
 import Sidebar from './components/Sidebar';
 import HeroSection from './components/HeroSection';
 import './App.css';
+import AboutMe from './components/AboutMe';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <Sidebar />
       <HeroSection />
+      <AboutMe />
     </div>
   );
 }
