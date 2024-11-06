@@ -8,7 +8,7 @@ const HeroSection = () => {
     <div className="hero-section">
       <div className="hero-image">
         {/* Replace with your image source */}
-        <img src="/path/to/your-image.jpg" alt="Profile" />
+        <img src="./assets/myphoto.png" alt="Profile" />
       </div>
       <div className="hero-content">
         <h1>Hello <br /> I'm Anna Peterson</h1>
