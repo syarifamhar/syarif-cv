@@ -12,10 +12,10 @@
   .sidebar {
     position: fixed;
     top: 0;
-    left: -250px; /* Start hidden */
-    width: 250px;
+    left: -900px; /* Start hidden */
+    width: 400px;
     height: 100%;
-    background-color: #dec3a3;
+    background-color: #333;
     color: white;
     transition: left 0.5s ease-in-out; /* Smooth sliding effect */
     padding-top: 60px;
@@ -32,8 +32,10 @@
   }
   
   .sidebar li {
-    padding: 15px 20px;
+    padding: 30px 100px;
     cursor: pointer;
+    font-size: 30px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   }
   
   .sidebar li:hover {
