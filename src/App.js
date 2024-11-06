@@ -2,8 +2,9 @@
 import React from 'react';
 import Sidebar from './components/Sidebar';
 import HeroSection from './components/HeroSection';
-import './App.css';
 import AboutMe from './components/AboutMe';
+import Portfolio from './components/Portfolio';
+import './App.css';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Sidebar />
       <HeroSection />
       <AboutMe />
+      <Portfolio />
     </div>
   );
 }

@@ -16,7 +16,7 @@ function Sidebar() {
       </div>
 
       {/* Sidebar */}
-      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+      <div className={`sidebar ${isOpen ? 'open' : ''}`} onMouseLeave={toggleSidebar}>
         <ul>
           <li>Home</li>
           <li>About Me</li>
