@@ -27,6 +27,17 @@ I           code, I design, I sip coffee... and still somehow manage to feel sle
             <p>Always Coding</p>
           </div>
           <div className="icon-item">
+            <img src={productIcon} alt="Product Icon" />
+            <p>Product Management Expert</p>
+          </div>
+          <div className="icon-item">
+            <img src={designIcon} alt="Design Icon" />
+            <p>Design Lover</p>
+          </div>
+        </div>
+
+        <div class ="about-icons">
+        <div className="icon-item">
             <img src={aiIcon} alt="AI Icon" />
             <p>AI Enthusiast</p>
           </div>
@@ -34,20 +45,9 @@ I           code, I design, I sip coffee... and still somehow manage to feel sle
             <img src={coffeeIcon} alt="Coffee Icon" />
             <p>Coffee Drinker</p>
           </div>
-        </div>
-
-        <div class ="about-icons">
-        <div className="icon-item">
+          <div className="icon-item">
             <img src={footballIcon} alt="Football Icon" />
             <p>Football Fanatic</p>
-          </div>
-          <div className="icon-item">
-            <img src={designIcon} alt="Design Icon" />
-            <p>Design Lover</p>
-          </div>
-          <div className="icon-item">
-            <img src={productIcon} alt="Product Icon" />
-            <p>Product Management Expert</p>
           </div>
         </div>
       </div>

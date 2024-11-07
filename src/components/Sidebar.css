@@ -8,7 +8,7 @@
     z-index: 9999;
     color: #f4f4f4;
     position: fixed;
-    background: #333;
+    background: #9e8c7d;
     border-radius: 10px;
     padding: 15px;
   }
@@ -19,7 +19,7 @@
     left: -900px; /* Start hidden */
     width: 400px;
     height: 100%;
-    background-color: #333;
+    background-color: #4a3622;
     color: white;
     transition: left 0.5s ease-in-out; /* Smooth sliding effect */
     padding-top: 60px;
@@ -33,6 +33,7 @@
   .sidebar ul {
     list-style-type: none;
     padding: 0;
+    margin: 5rem 0;
   }
   
   .sidebar li {
@@ -43,6 +44,6 @@
   }
   
   .sidebar li:hover {
-    background-color: #575757;
+    background-color: #9e8c7d;
   }
   

@@ -1,0 +1,83 @@
+.experience-section {
+    display: flex;
+    padding: 2rem 5rem;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .experience-title-container {
+    display: flex;
+    padding: 6rem 2rem;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  
+  .experience-title {
+    writing-mode: vertical-lr;
+    text-transform: uppercase;
+    font-size: 6rem;
+    color: #b19f7f;
+    margin-right: 5rem;
+  }
+  
+  .experience-content {
+    flex: 1;
+  }
+  
+  .experience-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #604439;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+  
+  .experience-description {
+    color: #9e8c7d;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .experience-item {
+    background-color: #9e8c7d; /* Adjust color as needed */
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .experience-item.active {
+    background-color: #6e5845; /* Slightly darker color when active */
+  }
+  
+  .experience-role {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  
+  .experience-toggle {
+    font-weight: bold;
+  }
+  
+  .experience-details {
+    background-color: #f3e7d3;
+    color: #604439;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    transition: height 0.3s ease;
+  }
+  
+  .experience-date {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
