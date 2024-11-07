@@ -6,8 +6,9 @@ import './Portfolio.css';
 const projects = [
     {
         title: "Myventory",
-        description: "A fantastic project showcasing my design and coding skills.",
+        description: "POS and accounting system for SME businesses",
         images: [
+        `${process.env.PUBLIC_URL}/assets/myvent-all.png`,
           `${process.env.PUBLIC_URL}/assets/myvent-1.png`, 
           `${process.env.PUBLIC_URL}/assets/myvent-2.png`, 
           `${process.env.PUBLIC_URL}/assets/myvent-3.png`,
@@ -17,17 +18,36 @@ const projects = [
           `${process.env.PUBLIC_URL}/assets/myvent-7.png`, 
           `${process.env.PUBLIC_URL}/assets/myvent-8.png`,
         ],
+        Skills: "Product Management, UI/UX Design, Vue.js, Git.",
       },
   {
     title: "Mirrora",
-    description: "Another amazing project that dives into AI and automation.",
-    images: ["/assets/project2-1.jpg", "/assets/project2-2.jpg"],
+    description: "AI Face Analysis for beauty product recomendations",
+    images: [
+      `${process.env.PUBLIC_URL}/assets/mirrora-thumbnail-2.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora-onboarding-1.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora-onboarding-2.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora-onboarding-3.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora-onboarding-4.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora-login.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora-signup.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora-forgot.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora-verification.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora-location.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora-3-bg.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora-home2.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora-stores.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora-brands.png`,
+        `${process.env.PUBLIC_URL}/assets/mirrora2-bg.png`, 
+        `${process.env.PUBLIC_URL}/assets/mirrora-4-bg.png`,
+    ],
+    Skills: "Product Management, UI/UX Design, Flutter, Git, Wordpress, Google Analytics",
   },
   {
     title: "Marvelkid's Clinic App",
-    description: "A fantastic project showcasing my design and coding skills.",
+    description: "Clinic management for childs therapy",
     images: [
-      `${process.env.PUBLIC_URL}/assets/marvel-1.png`, 
+      `${process.env.PUBLIC_URL}/assets/marvel-thumbnail.png`, 
           `${process.env.PUBLIC_URL}/assets/marvel-2.jpg`, 
           `${process.env.PUBLIC_URL}/assets/marvel-3.jpg`,
           `${process.env.PUBLIC_URL}/assets/marvel-4.jpg`,
@@ -36,6 +56,7 @@ const projects = [
           `${process.env.PUBLIC_URL}/assets/marvel-7.jpg`, 
           `${process.env.PUBLIC_URL}/assets/marvel-8.jpg`, 
     ],
+    Skills: "Product Management, UI/UX Design, Figma, Flutter, Git, Wordpress, Google Analytics",
   },
   // Add more projects here
 ];
@@ -69,8 +90,13 @@ const Portfolio = () => {
       {selectedProject && (
         <div className="portfolio-gallery">
           <button className="close-btn" onClick={closeGallery}>X</button>
-          <h3>{selectedProject.title}</h3>
-          <p>{selectedProject.description}</p>
+          
+          <div class="gallery-info">
+            <h3>{selectedProject.title}</h3>
+            <p>{selectedProject.description}</p>
+            <span>{selectedProject.Skills}</span>
+          </div>
+          
           <div className="gallery-images">
             {selectedProject.images.map((image, index) => (
               <img key={index} src={image} alt={`${selectedProject.title} ${index + 1}`} />

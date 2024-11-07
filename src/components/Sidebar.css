@@ -6,7 +6,11 @@
     top: 20px;
     left: 20px;
     z-index: 9999;
-    color: #fff;
+    color: #f4f4f4;
+    position: fixed;
+    background: #333;
+    border-radius: 10px;
+    padding: 15px;
   }
   
   .sidebar {
