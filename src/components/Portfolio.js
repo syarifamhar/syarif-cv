@@ -58,6 +58,33 @@ const projects = [
     ],
     Skills: "Product Management, UI/UX Design, Figma, Flutter, Git, Wordpress, Google Analytics",
   },
+  {
+    title: "WIEF Young Leaders Network",
+    description: "World Islamic Economic Forum holds its Young Leaders events",
+    images: [
+      `${process.env.PUBLIC_URL}/assets/wyn-thumbnail.png`, 
+          `${process.env.PUBLIC_URL}/assets/wyn-2.png`, 
+          `${process.env.PUBLIC_URL}/assets/wyn-3.png`,
+          `${process.env.PUBLIC_URL}/assets/wyn-4.png`, 
+          `${process.env.PUBLIC_URL}/assets/wyn-5.png`,
+          `${process.env.PUBLIC_URL}/assets/wyn-6.png`, 
+          `${process.env.PUBLIC_URL}/assets/wyn-8.png`, 
+    ],
+    Skills: "Project Management, Frontend Development, Wordpress",
+  },
+  {
+    title: "Ebene Website",
+    description: "EBENE is a health and wellness brand which aims to provide an effective means to improving one’s quality of life.",
+    images: [
+      `${process.env.PUBLIC_URL}/assets/ebene-thumbnail.png`, 
+          `${process.env.PUBLIC_URL}/assets/ebene-2.png`, 
+          `${process.env.PUBLIC_URL}/assets/ebene-3.png`,
+          `${process.env.PUBLIC_URL}/assets/ebene-4.png`, 
+          `${process.env.PUBLIC_URL}/assets/ebene-5.png`,
+          `${process.env.PUBLIC_URL}/assets/ebene-6.png`,
+    ],
+    Skills: "Project Management, Frontend Development, Wordpress",
+  },
   // Add more projects here
 ];
 
