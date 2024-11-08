@@ -7,7 +7,7 @@ import { FaMapMarkedAlt } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <div className="hero-section">
+    <div id="home" className="hero-section">
       <div className="hero-image">
         {/* Replace with your image source */}
         <img src={myPhoto} alt="Profile" />

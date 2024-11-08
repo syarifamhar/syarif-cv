@@ -5,7 +5,7 @@ import './ContactMe.css'; // Import the CSS file for styling
 
 const ContactMe = () => {
   return (
-    <section className="contact-me">
+    <section id="contact" className="contact-me">
       <div class="contact-title-container">
         <h2 class="contact-title">Contact Me</h2>
       </div>

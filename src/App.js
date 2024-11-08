@@ -1,25 +1,34 @@
 // App.js
-import React from 'react';
-import Sidebar from './components/Sidebar';
-import HeroSection from './components/HeroSection';
-import AboutMe from './components/AboutMe';
-import Portfolio from './components/Portfolio';
-import './App.css';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import ContactMe from './components/ContactMe';
-
+import React, { useState } from "react";
+import HeroSection from "./components/HeroSection";
+import AboutMe from "./components/AboutMe";
+import Experience from "./components/Experience";
+import Portfolio from "./components/Portfolio";
+import Skills from "./components/Skills";
+import ContactMe from "./components/ContactMe";
+import Sidebar from "./components/Sidebar";
+import "./App.css";
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div className="App">
-      <Sidebar />
-      <HeroSection />
-      <AboutMe />
-      <Experience />
-      <Skills />
-      <Portfolio />
-      <ContactMe />
+    <div>
+      <button className="burger-menu" onClick={toggleSidebar}>
+        ☰
+      </button>
+      <Sidebar isOpen={isSidebarOpen} toggle={toggleSidebar} />
+
+      <HeroSection id="home" />       {/* Ensure this matches the Link target */}
+      <AboutMe id="about" />          {/* Ensure this matches the Link target */}
+      <Experience id="experience" />  {/* Ensure this matches the Link target */}
+      <Portfolio id="portfolio" />    {/* Ensure this matches the Link target */}
+      <Skills id="skills" />          {/* Ensure this matches the Link target */}
+      <ContactMe id="contact" />      {/* Ensure this matches the Link target */}
     </div>
   );
 }

@@ -1,31 +1,19 @@
-import React, { useState } from 'react';
-import './Sidebar.css';
+// Sidebar.js
+import React from "react";
+import { Link } from "react-scroll";
+import "./Sidebar.css";
 
-function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
+function Sidebar({ isOpen, toggle }) {
   return (
-    <div>
-      {/* Burger Menu Icon */}
-      <div className="burger-menu" onClick={toggleSidebar}>
-        &#9776; {/* This is the burger icon (≡) */}
-      </div>
-
-      {/* Sidebar */}
-      <div className={`sidebar ${isOpen ? 'open' : ''}`} onMouseLeave={toggleSidebar}>
-        <ul>
-          <li>Home</li>
-          <li>About Me</li>
-          <li>Experience</li>
-          <li>Portfolio</li>
-          <li>Skills</li>
-          <li>Contact Me</li>
-        </ul>
-      </div>
+    <div className={`sidebar ${isOpen ? "open" : ""}`}>
+      <ul>
+        <li><Link to="home" smooth={true} duration={500} onClick={toggle}>Home</Link></li>
+        <li><Link to="about" smooth={true} duration={500} onClick={toggle}>About Me</Link></li>
+        <li><Link to="experience" smooth={true} duration={500} onClick={toggle}>Experience</Link></li>
+        <li><Link to="portfolio" smooth={true} duration={500} onClick={toggle}>Portfolio</Link></li>
+        <li><Link to="skills" smooth={true} duration={500} onClick={toggle}>Skills</Link></li>
+        <li><Link to="contact" smooth={true} duration={500} onClick={toggle}>Contact Me</Link></li>
+      </ul>
     </div>
   );
 }

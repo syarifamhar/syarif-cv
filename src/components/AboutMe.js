@@ -11,7 +11,7 @@ import productIcon from '../assets/product-icon.png';
 
 function AboutMe() {
   return (
-    <section className="about-section">
+    <section id="about" className="about-section">
       <div className="about-heading">
         <h1>About</h1>
       </div>
