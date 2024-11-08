@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from "react";
 import HeroSection from "./components/HeroSection";
 import AboutMe from "./components/AboutMe";
@@ -12,23 +11,30 @@ import "./App.css";
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsSidebarOpen(false); // Close sidebar after clicking a menu item
+    }
   };
 
   return (
     <div>
-      <button className="burger-menu" onClick={toggleSidebar}>
+      <button className="burger-menu" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
         ☰
       </button>
-      <Sidebar isOpen={isSidebarOpen} toggle={toggleSidebar} />
-
-      <HeroSection id="home" />       {/* Ensure this matches the Link target */}
-      <AboutMe id="about" />          {/* Ensure this matches the Link target */}
-      <Experience id="experience" />  {/* Ensure this matches the Link target */}
-      <Portfolio id="portfolio" />    {/* Ensure this matches the Link target */}
-      <Skills id="skills" />          {/* Ensure this matches the Link target */}
-      <ContactMe id="contact" />      {/* Ensure this matches the Link target */}
+      <Sidebar
+        isOpen={isSidebarOpen}
+        scrollTo={scrollToSection}
+        onClose={() => setIsSidebarOpen(false)} // Close when sidebar loses focus
+      />
+      <section id="home"><HeroSection /></section>
+      <section id="about"><AboutMe /></section>
+      <section id="experience"><Experience /></section>
+      <section id="portfolio"><Portfolio /></section>
+      <section id="skills"><Skills /></section>
+      <section id="contact"><ContactMe /></section>
     </div>
   );
 }

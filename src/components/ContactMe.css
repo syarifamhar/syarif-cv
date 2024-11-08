@@ -2,7 +2,7 @@
 .contact-me {
     background-color: #f0deca;
     display: flex;
-    padding: 3rem 5rem;
+    padding: 0rem 5rem 5rem;
     align-items: center;
     gap: 2rem;
   }
