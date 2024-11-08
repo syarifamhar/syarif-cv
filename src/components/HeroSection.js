@@ -2,6 +2,7 @@
 import React from 'react';
 import '../App.css'; // Ensure this points to the global CSS in 'src'
 import myPhoto from '../assets/myphoto.png';
+import { FaMapMarkedAlt } from "react-icons/fa";
 
 
 const HeroSection = () => {
@@ -16,6 +17,10 @@ const HeroSection = () => {
         <p>
           UI/UX Designer, Frontend Developer, and Product Manager.
         </p>
+        <div className="location">
+        <FaMapMarkedAlt />
+        <span>Surabaya, Indonesia</span>
+      </div>
       </div>
     </div>
   );

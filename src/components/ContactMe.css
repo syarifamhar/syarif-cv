@@ -1,0 +1,72 @@
+/* ContactMe.css */
+.contact-me {
+    background-color: #f0deca;
+    display: flex;
+    padding: 3rem 5rem;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .contact-title-container {
+    display: flex;
+    padding: 6rem 2rem;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .contact-title {
+    writing-mode: vertical-lr;
+    text-transform: uppercase;
+    font-size: 6rem;
+    color: #b19f7f;
+    margin-right: 5rem;
+  }
+
+  .contact-header {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-size: 6rem;
+    font-weight: 900;
+    color: #4a3622;
+    font-family: 'Fira Sans';
+}
+
+.contact-description {
+  color: #6e5845;
+  line-height: 1.8;
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+  .contact-container {
+    flex: 1 1;
+  }
+  
+  .contact-icons {
+    gap: 1.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .contact-icons a {
+    color: #f0deca;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex: 1 1 25%;
+    height: 5rem;
+    background: #4a3623;
+    padding: 1rem;
+    border-radius: 20px;
+  }
+  
+  .contact-icons a:hover {
+    color: #6E5845;
+    background-color: #B19F7F;
+  }
+  

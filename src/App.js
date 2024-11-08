@@ -7,6 +7,7 @@ import Portfolio from './components/Portfolio';
 import './App.css';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
+import ContactMe from './components/ContactMe';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Experience />
       <Skills />
       <Portfolio />
+      <ContactMe />
     </div>
   );
 }
