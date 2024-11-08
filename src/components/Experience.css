@@ -81,3 +81,25 @@
     margin-bottom: 0.5rem;
   }
   
+  @media (max-width: 480px) {
+    .experience-section {
+      flex-direction: column;
+      padding: 6rem 3rem 1rem;
+    }
+
+    .experience-title-container {
+      padding: 0;
+    }
+
+    .experience-title {
+      writing-mode: horizontal-tb;
+        text-transform: none;
+        font-size: 4rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .experience-header {
+      font-size: 1rem;
+    }
+  }

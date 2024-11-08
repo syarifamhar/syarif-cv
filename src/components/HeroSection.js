@@ -13,7 +13,7 @@ const HeroSection = () => {
         <img src={myPhoto} alt="Profile" />
       </div>
       <div className="hero-content">
-        <h1>Hello <br /> I'm Syarif Amhar</h1>
+        <h1>Hello, I'm Syarif Amhar</h1>
         <p>
           UI/UX Designer, Frontend Developer, and Product Manager.
         </p>

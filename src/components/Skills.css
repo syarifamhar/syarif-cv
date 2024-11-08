@@ -65,3 +65,32 @@
     border-radius: 5px;
   }
   
+  @media (max-width: 480px) {
+    .skills-section {
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    .skills-title-container {
+      padding: 0;
+    }
+
+    .skills-title {
+      writing-mode: horizontal-tb;
+      margin-right: 0;
+      font-size: 4rem;
+    }
+
+    .skills-row {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .skills-column h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .skill-name {
+      line-height: 1.8;
+    }
+  }
