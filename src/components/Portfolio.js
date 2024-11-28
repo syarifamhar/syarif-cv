@@ -85,6 +85,22 @@ const projects = [
     ],
     Skills: "Project Management, Frontend Development, Wordpress",
   },
+  {
+    title: "Logo Designs",
+    description: "Some of logo designs I did for personal projects and clients",
+    images: [
+      `${process.env.PUBLIC_URL}/assets/logo-design-thumb.png`, 
+          `${process.env.PUBLIC_URL}/assets/engage-logo.png`, 
+          `${process.env.PUBLIC_URL}/assets/arunika-logo.png`,
+          `${process.env.PUBLIC_URL}/assets/harf-logo.png`, 
+          `${process.env.PUBLIC_URL}/assets/portwave-logo.png`,
+          `${process.env.PUBLIC_URL}/assets/myventory-logo.png`,
+          `${process.env.PUBLIC_URL}/assets/mabey-logo.png`,
+          `${process.env.PUBLIC_URL}/assets/mirrora-logo.png`,
+          `${process.env.PUBLIC_URL}/assets/poras-logo.png`,
+    ],
+    Skills: "Project Management, Frontend Development, Wordpress",
+  },
   // Add more projects here
 ];
 
