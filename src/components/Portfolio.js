@@ -4,7 +4,38 @@ import './Portfolio.css';
 // Import the images at the top of the file if they are sta
 
 const projects = [
-    {
+//START ADDING PORTFOLIO HERE //
+
+  //POS APP PORTFOLIO
+  {
+    title: "Restaurant POS App Design",
+    description: "A design inspiration I have done for Restaurant POS app.",
+    images: [
+      `${process.env.PUBLIC_URL}/assets/Frame 84.png`,
+        `${process.env.PUBLIC_URL}/assets/pos-home.png`,
+        `${process.env.PUBLIC_URL}/assets/pos-payment.png`,
+          `${process.env.PUBLIC_URL}/assets/pos-dashboard.png`,
+    ],
+    Skills: "UI/UX Design, Product Development",
+  },
+  //DOCTER APP PORTFOLIO
+  {
+    title: "Doctor Appointment App Design",
+    description: "A mini project I have done for doctor appointments app.",
+    images: [
+      `${process.env.PUBLIC_URL}/assets/docter-thumbnail.png`,
+        `${process.env.PUBLIC_URL}/assets/docter-login.png`,
+        `${process.env.PUBLIC_URL}/assets/docter-location.png`,
+          `${process.env.PUBLIC_URL}/assets/docter-home-2.png`, 
+          `${process.env.PUBLIC_URL}/assets/docter-home-3.png`,
+          `${process.env.PUBLIC_URL}/assets/docter-details.png`,
+          `${process.env.PUBLIC_URL}/assets/docter-details-2.png`,
+          `${process.env.PUBLIC_URL}/assets/docter-details.png`,
+    ],
+    Skills: "UI/UX Design, Product Development",
+  },
+  //MYVENTORY PORTFOLIO  
+  {
         title: "Myventory",
         description: "POS and accounting system for SME businesses",
         images: [
@@ -85,6 +116,7 @@ const projects = [
     ],
     Skills: "Project Management, Frontend Development, Wordpress",
   },
+  // LOGO DESIGN PORTFOLIO
   {
     title: "Logo Designs",
     description: "Some of logo designs I did for personal projects and clients",
