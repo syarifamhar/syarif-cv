@@ -1,55 +1,29 @@
 import React from 'react';
 import './AboutMe.css';
-
-// Importing icons from the assets folder
-import codingIcon from '../assets/coding-icon.png';
-import aiIcon from '../assets/ai-icon.png';
-import coffeeIcon from '../assets/coffee-cup.png';
-import footballIcon from '../assets/soccer-player.png';
-import designIcon from '../assets/design-icon.png';
-import productIcon from '../assets/product-icon.png';
+import syarifCharacter from '../assets/syarif-character(1).png';
 
 function AboutMe() {
   return (
     <section id="about" className="about-section">
-      <div className="about-heading">
-        <h1>About</h1>
+      <div className="about-left">
+        <div className="about-heading">
+          <h1>Why I Build</h1>
+        </div>
+        <div className="about-content">
+          <p>
+            I didn’t start learning design, code, and product management to chase a career. I started because I felt lost...building things made me feel useful.<br /><br />
+            Over time, I realized I wasn’t just designing screens, I was trying to connect with people. It became less about code or layout, and more about <b>empathy</b>.<br /><br />
+            Now, I help teams build products that feel human. From AI beauty analysis, wellness apps to internal tools for doctors and websites for small businesses, I focus on things that matter.<br /><br />
+            I’ve led teams, shipped features, fixed bugs at 2am, and asked hard questions when no one else would. Because to me, it’s never just about deliverables. It’s about <b>impact</b>.<br /><br />
+            I’m not here to impress.<br />
+            I’m here to help.<br /><br />
+            If you’re building something meaningful, I’d love to hear your story.<br /><br />
+            Let’s create something that matters!
+          </p>
+        </div>
       </div>
-      <div className="about-content">
-        <h2>Meet Syarif: Powered by Coffee, Driven by Curiosity!</h2>
-        <p>
-I           code, I design, I sip coffee... and still somehow manage to feel sleepy. When I’m not learning the latest AI trick or geeking out over football, I’m busy finding creative ways to mix work and caffeine. Life’s a game, and I’m here to play it—one debug session at a time.
-        </p>
-
-        <div className="about-icons">
-          <div className="icon-item">
-            <img src={codingIcon} alt="Coding Icon" />
-            <p>Always Coding</p>
-          </div>
-          <div className="icon-item">
-            <img src={productIcon} alt="Product Icon" />
-            <p>Product Management Expert</p>
-          </div>
-          <div className="icon-item">
-            <img src={designIcon} alt="Design Icon" />
-            <p>Design Lover</p>
-          </div>
-        </div>
-
-        <div class ="about-icons">
-        <div className="icon-item">
-            <img src={aiIcon} alt="AI Icon" />
-            <p>AI Enthusiast</p>
-          </div>
-          <div className="icon-item">
-            <img src={coffeeIcon} alt="Coffee Icon" />
-            <p>Coffee Drinker</p>
-          </div>
-          <div className="icon-item">
-            <img src={footballIcon} alt="Football Icon" />
-            <p>Football Fanatic</p>
-          </div>
-        </div>
+      <div className="about-right">
+        <img src={syarifCharacter} alt="Syarif Character" className="about-image" />
       </div>
     </section>
   );

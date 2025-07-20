@@ -1,170 +1,70 @@
-// src/components/Portfolio.js
-import React, { useState } from 'react';
-import './Portfolio.css';
+import React, { useEffect, useState } from 'react';
+import { supabase } from '../services/supabaseClient';
+import { motion } from 'framer-motion';
 
-// Add categories to each project for filtering
-const categories = [
-  'All',
-  'UI/UX',
-  'Frontend',
-  'Product Manager',
-];
+export default function Clients() {
+  const [clients, setClients] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-const projects = [
-  {
-    title: "Restaurant POS App Design",
-    description: "A design inspiration I have done for Restaurant POS app.",
-    images: [
-      `${process.env.PUBLIC_URL}/assets/Frame 84.png`,
-      `${process.env.PUBLIC_URL}/assets/pos-home.png`,
-      `${process.env.PUBLIC_URL}/assets/pos-payment.png`,
-      `${process.env.PUBLIC_URL}/assets/pos-dashboard.png`,
-    ],
-    Skills: "UI/UX Design, Product Development",
-    category: "UI/UX",
-  },
-  {
-    title: "Doctor Appointment App Design",
-    description: "A mini project I have done for doctor appointments app.",
-    images: [
-      `${process.env.PUBLIC_URL}/assets/docter-thumbnail.png`,
-      `${process.env.PUBLIC_URL}/assets/docter-login.png`,
-      `${process.env.PUBLIC_URL}/assets/docter-location.png`,
-      `${process.env.PUBLIC_URL}/assets/docter-home-2.png`,
-      `${process.env.PUBLIC_URL}/assets/docter-home-3.png`,
-      `${process.env.PUBLIC_URL}/assets/docter-details.png`,
-      `${process.env.PUBLIC_URL}/assets/docter-details-2.png`,
-      `${process.env.PUBLIC_URL}/assets/docter-details.png`,
-    ],
-    Skills: "UI/UX Design, Product Development",
-    category: "UI/UX",
-  },
-  {
-    title: "Myventory",
-    description: "POS and accounting system for SME businesses",
-    images: [
-      `${process.env.PUBLIC_URL}/assets/myvent-all.png`,
-      `${process.env.PUBLIC_URL}/assets/myvent-1.png`,
-      `${process.env.PUBLIC_URL}/assets/myvent-2.png`,
-      `${process.env.PUBLIC_URL}/assets/myvent-3.png`,
-      `${process.env.PUBLIC_URL}/assets/myvent-4.png`,
-      `${process.env.PUBLIC_URL}/assets/myvent-5.png`,
-      `${process.env.PUBLIC_URL}/assets/myvent-6.png`,
-      `${process.env.PUBLIC_URL}/assets/myvent-7.png`,
-      `${process.env.PUBLIC_URL}/assets/myvent-8.png`,
-    ],
-    Skills: "Product Management, UI/UX Design, Vue.js, Git.",
-    category: "Product Manager",
-  },
-  {
-    title: "Mirrora",
-    description: "AI Face Analysis for beauty product recomendations",
-    images: [
-      `${process.env.PUBLIC_URL}/assets/mirrora-thumbnail-2.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-onboarding-1.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-onboarding-2.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-onboarding-3.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-onboarding-4.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-login.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-signup.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-forgot.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-verification.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-location.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-3-bg.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-home2.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-stores.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-brands.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora2-bg.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-4-bg.png`,
-    ],
-    Skills: "Product Management, UI/UX Design, Flutter, Git, Wordpress, Google Analytics",
-    category: "Product Manager",
-  },
-  {
-    title: "Marvelkid's Clinic App",
-    description: "Clinic management for childs therapy",
-    images: [
-      `${process.env.PUBLIC_URL}/assets/marvel-thumbnail.png`,
-      `${process.env.PUBLIC_URL}/assets/marvel-2.jpg`,
-      `${process.env.PUBLIC_URL}/assets/marvel-3.jpg`,
-      `${process.env.PUBLIC_URL}/assets/marvel-4.jpg`,
-      `${process.env.PUBLIC_URL}/assets/marvel-5.jpg`,
-      `${process.env.PUBLIC_URL}/assets/marvel-6.jpg`,
-      `${process.env.PUBLIC_URL}/assets/marvel-7.jpg`,
-      `${process.env.PUBLIC_URL}/assets/marvel-8.jpg`,
-    ],
-    Skills: "Product Management, UI/UX Design, Figma, Flutter, Git, Wordpress, Google Analytics",
-    category: "Frontend",
-  },
-  {
-    title: "WIEF Young Leaders Network",
-    description: "World Islamic Economic Forum holds its Young Leaders events",
-    images: [
-      `${process.env.PUBLIC_URL}/assets/wyn-thumbnail.png`,
-      `${process.env.PUBLIC_URL}/assets/wyn-2.png`,
-      `${process.env.PUBLIC_URL}/assets/wyn-3.png`,
-      `${process.env.PUBLIC_URL}/assets/wyn-4.png`,
-      `${process.env.PUBLIC_URL}/assets/wyn-5.png`,
-      `${process.env.PUBLIC_URL}/assets/wyn-6.png`,
-      `${process.env.PUBLIC_URL}/assets/wyn-8.png`,
-    ],
-    Skills: "Project Management, Frontend Development, Wordpress",
-    category: "Frontend",
-  },
-  {
-    title: "Ebene Website",
-    description: "EBENE is a health and wellness brand which aims to provide an effective means to improving one’s quality of life.",
-    images: [
-      `${process.env.PUBLIC_URL}/assets/ebene-thumbnail.png`,
-      `${process.env.PUBLIC_URL}/assets/ebene-2.png`,
-      `${process.env.PUBLIC_URL}/assets/ebene-3.png`,
-      `${process.env.PUBLIC_URL}/assets/ebene-4.png`,
-      `${process.env.PUBLIC_URL}/assets/ebene-5.png`,
-      `${process.env.PUBLIC_URL}/assets/ebene-6.png`,
-    ],
-    Skills: "Project Management, Frontend Development, Wordpress",
-    category: "Frontend",
-  },
-  {
-    title: "Logo Designs",
-    description: "Some of logo designs I did for personal projects and clients",
-    images: [
-      `${process.env.PUBLIC_URL}/assets/logo-design-thumb.png`,
-      `${process.env.PUBLIC_URL}/assets/engage-logo.png`,
-      `${process.env.PUBLIC_URL}/assets/arunika-logo.png`,
-      `${process.env.PUBLIC_URL}/assets/harf-logo.png`,
-      `${process.env.PUBLIC_URL}/assets/portwave-logo.png`,
-      `${process.env.PUBLIC_URL}/assets/myventory-logo.png`,
-      `${process.env.PUBLIC_URL}/assets/mabey-logo.png`,
-      `${process.env.PUBLIC_URL}/assets/mirrora-logo.png`,
-      `${process.env.PUBLIC_URL}/assets/poras-logo.png`,
-    ],
-    Skills: "Project Management, Frontend Development, Wordpress",
-    category: "UI/UX",
-  },
-];
+  // Client logos from assets folder
+  const clientLogos = [
+    { name: "Marvell Kid's", logo: "/assets/marvelkids-logo.png" },
+    { name: "QuickSchools.com", logo: "/assets/qs-logo.png" },
+    { name: "Zahir", logo: "/assets/ZahirLogo.png" },
+    { name: "Delyva", logo: "/assets/delyva-logo.png" },
+  ];
 
-const Portfolio = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  // Sample testimonials (you can replace with data from Supabase)
+  const sampleTestimonials = [
+    {
+      id: 1,
+      text: "Syarif delivered exceptional results for our kids' platform. His attention to detail and creative solutions exceeded our expectations.",
+      client_name: "Sarah Johnson",
+      client_company: "Marvell Kid's"
+    },
+    {
+      id: 2,
+      text: "Working with Syarif was a game-changer for our school management system. He transformed our vision into a beautiful, functional product.",
+      client_name: "Michael Chen",
+      client_company: "QuickSchools.com"
+    },
+    {
+      id: 3,
+      text: "Syarif's expertise in frontend development and UI/UX design helped us create an outstanding user experience for our platform.",
+      client_name: "Emily Rodriguez",
+      client_company: "Zahir"
+    },
+    {
+      id: 4,
+      text: "Professional, reliable, and incredibly talented. Syarif consistently delivers high-quality work on time.",
+      client_name: "David Kim",
+      client_company: "Delyva"
+    }
+  ];
 
-  const openGallery = (project) => {
-    setSelectedProject(project);
-  };
-
-  const closeGallery = () => {
-    setSelectedProject(null);
-  };
-
-  // Filtering logic
-  const filteredProjects = selectedCategory === 'All'
-    ? projects
-    : projects.filter((p) => p.category === selectedCategory);
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const { data: clientsData } = await supabase.from('clients').select('*').order('id', { ascending: false });
+        const { data: testimonialsData } = await supabase.from('testimonials').select('*').order('id', { ascending: false });
+        
+        setClients(clientsData || []);
+        setTestimonials(testimonialsData && testimonialsData.length > 0 ? testimonialsData : sampleTestimonials);
+      } catch (error) {
+        console.log('Using sample data:', error);
+        setClients([]);
+        setTestimonials(sampleTestimonials);
+      }
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="relative w-full flex justify-center items-center min-h-screen overflow-hidden portfolio-bg">
-      {/* Animated SVG Blobs Background (copied from HeroSection) */}
-      {/* --- SVG BLOB CODE START --- */}
+      {/* Animated SVG Blobs Background (same as Portfolio section) */}
       <svg className="absolute top-[-20%] left-1/2 -translate-x-1/2 z-0 animate-blob1" width="700" height="700" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg" style={{opacity:0.7, filter:'blur(0px)'}}>
         <defs>
           <linearGradient id="blob1Gradient" x1="0" y1="0" x2="1" y2="1">
@@ -255,51 +155,112 @@ const Portfolio = () => {
         </defs>
         <path fill="url(#blob10Gradient)" d="M 90 20 Q 140 30 150 90 Q 170 130 90 165 Q 25 140 15 90 Q 0 50 50 30 Q 70 20 90 20 Z"/>
       </svg>
-      {/* --- SVG BLOB CODE END --- */}
-      <div className="relative z-10 w-full flex flex-col items-center justify-center">
-        <h2 className="text-[6rem] text-[#b19f7f] text-center mb-8 font-mono font-bold tracking-wide">Portfolio</h2>
-        {/* Tabs/Filters */}
-        <div className="flex flex-wrap gap-4 justify-center mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-6 py-2 rounded-full font-mono text-lg font-medium border transition shadow-md focus:outline-none focus:ring-2 focus:ring-brown-400/50 ${selectedCategory === cat ? 'bg-[#6e5845] text-white' : 'bg-[#e7d7c1] text-[#6e5845] border-[#b19f7f]'}`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-        {/* Portfolio Grid */}
-        <div className="portfolio-grid relative z-10">
-          {filteredProjects.map((project, index) => (
-            <div key={index} className="portfolio-item" onClick={() => openGallery(project)}>
-              <img src={project.images[0]} alt={project.title} />
-              <div className="portfolio-info">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      {/* Modal/Popup for project details */}
-      {selectedProject && (
-        <div className="portfolio-gallery">
-          <button className="close-btn" onClick={closeGallery}>X</button>
-          <div className="gallery-info">
-            <h3>{selectedProject.title}</h3>
-            <p>{selectedProject.description}</p>
-            <span>{selectedProject.Skills}</span>
-          </div>
-          <div className="gallery-images">
-            {selectedProject.images.map((image, index) => (
-              <img key={index} src={image} alt={`${selectedProject.title} ${index + 1}`} />
+
+      <div className="relative z-10 w-full flex flex-col items-center justify-center py-16">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-[6rem] text-[#b19f7f] text-center mb-8 font-mono font-bold tracking-wide"
+        >
+          Clients
+        </motion.h2>
+
+        {/* Animated Logo Carousel */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-16 overflow-hidden w-full"
+        >
+          <motion.div 
+            className="flex space-x-20 items-center"
+            animate={{ x: [0, -800] }}
+            transition={{ 
+              duration: 25, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+          >
+            {/* Duplicate logos for seamless loop */}
+            {[...clientLogos, ...clientLogos].map((client, index) => (
+              <motion.div
+                key={`${client.name}-${index}`}
+                whileHover={{ scale: 1.15 }}
+                className="flex-shrink-0 w-48 h-32 bg-white/70 backdrop-blur-lg rounded-xl shadow-2xl flex items-center justify-center p-6 border border-white/30"
+              >
+                <img 
+                  src={client.logo} 
+                  alt={client.name} 
+                  className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+
+        {/* Testimonials Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mb-12 w-full max-w-6xl"
+        >
+          <h3 className="text-4xl font-bold text-center mb-12 text-black font-mono">
+            What Clients Say
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="bg-white/70 backdrop-blur-lg rounded-xl p-8 shadow-2xl border border-white/30"
+              >
+                <div className="flex items-start mb-6">
+                  <div className="text-3xl text-yellow-500 mr-4">"</div>
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    {testimonial.text}
+                  </p>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-14 h-14 bg-gradient-to-br from-brown-500 to-brown-700 rounded-full flex items-center justify-center text-white font-bold text-xl mr-5">
+                    {testimonial.client_name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-black text-lg">
+                      {testimonial.client_name}
+                    </div>
+                    <div className="text-sm text-gray-500">
+                      {testimonial.client_company}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-      )}
-      {/* Animation CSS (copied from HeroSection) */}
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-center"
+        >
+          <a 
+            href="#contact" 
+            className="inline-block px-10 py-5 bg-gradient-to-r from-brown-600 to-brown-700 text-white rounded-full font-semibold shadow-xl hover:from-brown-700 hover:to-brown-800 transition-all duration-300 transform hover:scale-105 text-lg"
+          >
+            Work with me
+          </a>
+        </motion.div>
+      </div>
+
+      {/* Animation CSS (same as Portfolio section) */}
       <style>{`
         @keyframes blob1 {
           0%,100% { transform: translate(-50%, 0) scale(1) rotate(0deg); }
@@ -362,6 +323,4 @@ const Portfolio = () => {
       `}</style>
     </div>
   );
-};
-
-export default Portfolio;
+} 

@@ -68,3 +68,34 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Tech Stack & Setup
+
+- **React** (with hooks)
+- **Tailwind CSS** (utility-first styling)
+- **Supabase** (backend/CMS)
+- **Framer Motion** (animations)
+
+### Getting Started
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+2. **Tailwind CSS** is configured in `tailwind.config.js` and imported in `src/index.css`.
+3. **Supabase**: Set up your Supabase project and get your API keys. See [Supabase docs](https://supabase.com/docs/guides/getting-started) for details.
+4. **Framer Motion** is used for sidebar and section transitions.
+
+### Customization
+- Edit `tailwind.config.js` for color palette and theme.
+- Update `src/components/Sidebar.js` for your avatar, name, and social links.
+- Add your Supabase credentials in a `.env` file (see below).
+
+### Environment Variables
+Create a `.env` file in `syarif-cv/`:
+```
+REACT_APP_SUPABASE_URL=your-supabase-url
+REACT_APP_SUPABASE_ANON_KEY=your-supabase-anon-key
+```
+
+---
